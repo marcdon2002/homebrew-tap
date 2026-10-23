@@ -11,12 +11,22 @@ brew install marcdon2002/tap/amber-shell
 amber-shell-setup
 ```
 
-If Codex is not already installed and logged in:
+If the official Codex CLI is not installed yet:
 
 ```sh
 brew install --cask codex
+```
+
+Sign into Amber with ChatGPT in your browser, even if you already use Codex:
+
+```sh
 amber-shell login
 ```
+
+Amber has a separate login profile. `amber-shell login status` checks it;
+`amber-shell logout` signs out only Amber. Your personal Codex login and the
+ChatGPT browser session stay signed in. For device-code login, use
+`amber-shell login --device-auth`. Run `amber-shell login --help` for details.
 
 Open a new terminal window and press **Ctrl-X**, then **Ctrl-A**. **Ctrl-Y** transfers a suggestion to the editable shell prompt; normal **Enter in the shell** executes it.
 

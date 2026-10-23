@@ -1,8 +1,8 @@
 class AmberShell < Formula
   desc "Compact inline Zsh assistant with ChatGPT authentication"
   homepage "https://github.com/marcdon2002/amber-shell"
-  url "https://github.com/marcdon2002/amber-shell/releases/download/v0.8.0/amber-shell-0.8.0-aarch64-apple-darwin.tar.gz"
-  sha256 "3e0267d762ca6491f7ea26ec8b0034fcbe9988da06a2a611ca2aac217134f81a"
+  url "https://github.com/marcdon2002/amber-shell/releases/download/v0.8.1/amber-shell-0.8.1-aarch64-apple-darwin.tar.gz"
+  sha256 "9ab434c5985b11157e0d3417ffe01fed060201a56f23acede304fdf37650a169"
   license "MIT"
 
   depends_on arch: :arm64
@@ -22,12 +22,17 @@ class AmberShell < Formula
     <<~EOS
       Enable the Zsh integration once (backs up your startup files):
         amber-shell-setup
-      Open a new terminal window, then press Ctrl-X followed by Ctrl-A.
 
-      Amber uses the official Codex CLI with your ChatGPT login:
+      Install the official Codex CLI if needed:
         brew install --cask codex
+
+      Sign into Amber with ChatGPT after setup:
         amber-shell login
-      Existing Codex installations and logins can be reused.
+      Amber can reuse an existing Codex installation. Its login is separate
+      from your personal Codex login; sign into Amber once even if Codex
+      is already signed in. amber-shell logout signs out only Amber.
+
+      Open a new terminal window, then press Ctrl-X followed by Ctrl-A.
     EOS
   end
 
