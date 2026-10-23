@@ -22,6 +22,8 @@ Open a new terminal window and press **Ctrl-X**, then **Ctrl-A**. **Ctrl-Y** tra
 
 The package downloads a SHA256-verified release binary; no Rust compiler is needed. Setup backs up `.zshenv`/`.zshrc` and migrates only exact Amber-managed blocks. Existing personal shell configuration is preserved. Configuration uses Homebrew's stable `opt` path; upgrades need no repeated setup.
 
+If an older `~/.local/bin/amber-shell` comes before Homebrew in your `PATH`, direct CLI calls can still select that old binary. The configured hotkey uses Homebrew explicitly. After successful migration, retire the old executable or use `"$(brew --prefix amber-shell)/bin/amber-shell"` for CLI calls.
+
 For symlinked startup files, pass the resolved targets to `amber-shell-setup --zshrc /absolute/path --zshenv /absolute/path`.
 
 ## Update
