@@ -1,8 +1,8 @@
 class AmberShell < Formula
   desc "Compact inline Zsh assistant with ChatGPT authentication"
   homepage "https://github.com/marcdon2002/amber-shell"
-  url "https://github.com/marcdon2002/amber-shell/releases/download/v0.7.3/amber-shell-0.7.3-aarch64-apple-darwin.tar.gz"
-  sha256 "0e3e68edc6fff34b2cf73a98337a78a56eeadfe4b1052db1d577ebaea6edce09"
+  url "https://github.com/marcdon2002/amber-shell/releases/download/v0.8.0/amber-shell-0.8.0-aarch64-apple-darwin.tar.gz"
+  sha256 "3e0267d762ca6491f7ea26ec8b0034fcbe9988da06a2a611ca2aac217134f81a"
   license "MIT"
 
   depends_on arch: :arm64
@@ -33,7 +33,7 @@ class AmberShell < Formula
 
   test do
     assert_equal "amber-shell #{version}\n", shell_output("#{bin}/amber-shell --version")
-    assert_match "Inline-Dialog", shell_output("#{bin}/amber-shell --help")
+    assert_match "Inline chat", shell_output("#{bin}/amber-shell --help")
     system "/bin/zsh", "-n", pkgshare/"amber-shell.zsh"
     system "/bin/zsh", "-n", pkgshare/"amber-session.zsh"
     (testpath/"zsh").mkpath
