@@ -17,18 +17,14 @@ If the official Codex CLI is not installed yet:
 brew install --cask codex
 ```
 
-Sign into Amber with ChatGPT in your browser, even if you already use Codex:
+Open a new terminal window and press **Ctrl-X**, then **Ctrl-A**. On first open, Amber shows **Log in with ChatGPT**. Press **Enter**, finish the official browser login, and Amber continues directly to the question input in the same dialog. No separate login command is required.
 
-```sh
-amber-shell login
-```
-
-Amber has a separate login profile. `amber-shell login status` checks it;
+Amber has a separate login profile, even if you already use Codex. `amber-shell login status` checks it;
 `amber-shell logout` signs out only Amber. Your personal Codex login and the
 ChatGPT browser session stay signed in. For device-code login, use
-`amber-shell login --device-auth`. Run `amber-shell login --help` for details.
+`amber-shell login --device-auth`. The optional `amber-shell login` command also opens browser login. Run `amber-shell login --help` for details.
 
-Open a new terminal window and press **Ctrl-X**, then **Ctrl-A**. **Ctrl-Y** transfers a suggestion to the editable shell prompt; normal **Enter in the shell** executes it.
+**Ctrl-Y** transfers a suggestion to the editable shell prompt; normal **Enter in the shell** executes it.
 
 The package downloads a SHA256-verified release binary; no Rust compiler is needed. Setup backs up `.zshenv`/`.zshrc` and migrates only exact Amber-managed blocks. Existing personal shell configuration is preserved. Configuration uses Homebrew's stable `opt` path; upgrades need no repeated setup.
 
