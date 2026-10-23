@@ -1,8 +1,8 @@
 class AmberShell < Formula
   desc "Compact inline Zsh assistant with ChatGPT authentication"
   homepage "https://github.com/marcdon2002/amber-shell"
-  url "https://github.com/marcdon2002/amber-shell/releases/download/v0.7.1/amber-shell-0.7.1-aarch64-apple-darwin.tar.gz"
-  sha256 "4e917394d1beb4c5ef4497e679fca59333a96b07ae645b1ff97995c0489c5d3c"
+  url "https://github.com/marcdon2002/amber-shell/releases/download/v0.7.3/amber-shell-0.7.3-aarch64-apple-darwin.tar.gz"
+  sha256 "0e3e68edc6fff34b2cf73a98337a78a56eeadfe4b1052db1d577ebaea6edce09"
   license "MIT"
 
   depends_on arch: :arm64
