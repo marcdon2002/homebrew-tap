@@ -47,6 +47,8 @@ Local preferences and history are retained. To stop using this tap, run `brew un
 
 ## Maintenance
 
-The upstream release packager generates `amber-shell.rb` from the exact release archive and checksum. Copy that release's formula into `Formula/amber-shell.rb`, verify with `brew audit --strict marcdon2002/tap/amber-shell` and `brew test marcdon2002/tap/amber-shell`, then commit the update. Do not reuse a checksum from a different build.
+The upstream tagged release workflow generates `amber-shell.rb` from the exact release archive and checksum. Copy that release's formula into `Formula/amber-shell.rb`, verify with `brew audit --strict marcdon2002/tap/amber-shell` and `brew test marcdon2002/tap/amber-shell`, then commit the update. Do not reuse a checksum from a different build.
+
+Changes to this tap are automatically checked by installing the formula, running `brew test`, and running `brew audit --strict` on a standard macOS ARM64 runner. Tests use temporary shell configuration and make no model requests.
 
 MIT licensed. Report product issues in [amber-shell](https://github.com/marcdon2002/amber-shell/issues).

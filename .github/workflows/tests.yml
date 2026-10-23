@@ -1,0 +1,22 @@
+name: Homebrew
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  install:
+    runs-on: macos-15
+    timeout-minutes: 15
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: "1"
+      HOMEBREW_NO_ANALYTICS: "1"
+      HOMEBREW_NO_INSTALL_CLEANUP: "1"
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Install and test
+        run: |
+          brew tap marcdon2002/tap "$GITHUB_WORKSPACE"
+          brew install marcdon2002/tap/amber-shell
+          brew test marcdon2002/tap/amber-shell
+          brew audit --strict marcdon2002/tap/amber-shell
