@@ -1,0 +1,50 @@
+# Homebrew Tap
+
+Homebrew packages for [Amber Shell](https://github.com/marcdon2002/amber-shell), a compact Zsh assistant using the official Codex CLI and your ChatGPT login.
+
+## Install
+
+Requires macOS 13+ on Apple Silicon and Homebrew.
+
+```sh
+brew install marcdon2002/tap/amber-shell
+amber-shell-setup
+```
+
+If Codex is not already installed and logged in:
+
+```sh
+brew install --cask codex
+amber-shell login
+```
+
+Open a new terminal window and press **Ctrl-X**, then **Ctrl-A**. **Ctrl-Y** transfers a suggestion to the editable shell prompt; normal **Enter in the shell** executes it.
+
+The package downloads a SHA256-verified release binary; no Rust compiler is needed. Setup backs up `.zshenv`/`.zshrc` and migrates only exact Amber-managed blocks. Existing personal shell configuration is preserved. Configuration uses Homebrew's stable `opt` path; upgrades need no repeated setup.
+
+For symlinked startup files, pass the resolved targets to `amber-shell-setup --zshrc /absolute/path --zshenv /absolute/path`.
+
+## Update
+
+```sh
+brew update
+brew upgrade marcdon2002/tap/amber-shell
+```
+
+Open a new terminal window after updating.
+
+## Uninstall
+
+First remove the marked `amber-shell capture` block from `.zshenv` and the marked `amber-shell` block from `.zshrc`, then run:
+
+```sh
+brew uninstall amber-shell
+```
+
+Local preferences and history are retained. To stop using this tap, run `brew untap marcdon2002/tap`.
+
+## Maintenance
+
+The upstream release packager generates `amber-shell.rb` from the exact release archive and checksum. Copy that release's formula into `Formula/amber-shell.rb`, verify with `brew audit --strict marcdon2002/tap/amber-shell` and `brew test marcdon2002/tap/amber-shell`, then commit the update. Do not reuse a checksum from a different build.
+
+MIT licensed. Report product issues in [amber-shell](https://github.com/marcdon2002/amber-shell/issues).
